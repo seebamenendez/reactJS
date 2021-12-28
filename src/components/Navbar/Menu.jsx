@@ -1,6 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {RiShoppingCartFill} from 'react-icons/ri';
+import Widget from './Widget';
 
 function Menu() {
   return (
@@ -80,16 +80,13 @@ function Menu() {
                 Inscribirse
               </a>
             </li>
-            <li className="nav-item">
-              <a className="nav-link text-success" href="/#">
-                <RiShoppingCartFill />
-              </a>
-            </li>
+            <Widget />
           </ul>
         </div>
       </nav>
     </>
   );
 }
+
 
 export default Menu
