@@ -1,6 +1,7 @@
 import './App.css';
 import Menu from './components/Navbar/Menu';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import ItemCount from './components/ItemCount/ItemCount';
 
 function App() {
 
@@ -16,10 +17,12 @@ function App() {
       <h1>Arauca</h1>
       <Menu />
       <ItemListContainer greeting='Bienvenidos a Arauca' item={item} />
-
+      <ItemCount min={1} max={10} />
       
     </div>
   )
 }
+
+
 
 export default App;
