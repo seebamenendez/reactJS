@@ -5,20 +5,19 @@ import ItemCount from './components/ItemCount/ItemCount';
 
 function App() {
 
-  const item = {
+  /*const item = {
     nombre: 'Campera Origen',
     precio: 2500,
     coleccion: 'Lucida'
-  }
+  }*/
 
   //jsx
   return(
     <div className="App" onClick ={ ()=>console.log() }>
       <h1>Arauca</h1>
       <Menu />
-      <ItemListContainer greeting='Bienvenidos a Arauca' item={item} />
+      <ItemListContainer greeting='Bienvenidos a Arauca'/>
       <ItemCount min={1} max={10} />
-      
     </div>
   )
 }

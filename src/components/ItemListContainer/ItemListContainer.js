@@ -1,36 +1,29 @@
-//import {useState, useEffect} from 'react';
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import {traerProductos} from '../../productos';
+import ItemList from './ItemList';
 
-function ItemListContainer () {
+const ItemListContainer = ({ saludo }) => {
 
-const prendas = [
-    { nombre: "Campera Origen", precio: 2500, coleccion: "Lucida", stock: 6},
-    { nombre: "Vestido NATIVO", precio: 2400, coleccion: "Lucida", stock: 2},
-    { nombre: "Camisa OVER", precio: 1990, coleccion: "Lucida", stock: 5},
-    { nombre: "Sobrecamisa GALOPE", precio: 2100, coleccion: "Lucida", stock: 4}   
-]
+    const [data, setData] = useState([])
 
-const traerPrendas = new Promise((resuelto, rechazado) => {
-    setTimeout(() => {
-        resuelto(prendas);
-      }, 3000);
-    });
-  
-    traerPrendas
-      .then((result) => result)
-      .then((data) => console.log(data))
-      .catch((err) => err);
-  
+    //lo deja al codigo para cargar al final
+    useEffect(() => {
+        //Para poder mostrar bien que es lo que trae la promesa
+        traerProductos.then((respuesta)=>{
+            setData(respuesta);
+        })
+        .catch((error) => {
+            console.error(error)
+        });
+    }, []);
+        
+
     return (
-      <div>
-        <h1>Bienvenidos a Arauca</h1>
-        <h2>Comienza a comprar!</h2>
-      </div>
+        <div>
+            <h2 style={{textAlign: 'center'}}> {saludo}</h2>
+            <ItemList productos={data} />
+        </div>
     );
-    
-
-
-
 }
 
 export default ItemListContainer
