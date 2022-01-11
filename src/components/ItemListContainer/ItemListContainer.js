@@ -1,29 +1,33 @@
-import React, {useState, useEffect} from 'react';
-import {traerProductos} from '../../productos';
+import React, { useState, useEffect } from 'react';
+import { getFetch } from '../../productos';
 import ItemList from './ItemList';
 
-const ItemListContainer = ({ saludo }) => {
+function ItemListContainer ({ greeting }) {
 
-    const [data, setData] = useState([])
+    const [productos, setProductos] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     //lo deja al codigo para cargar al final
     useEffect(() => {
         //Para poder mostrar bien que es lo que trae la promesa
-        traerProductos.then((respuesta)=>{
-            setData(respuesta);
-        })
-        .catch((error) => {
-            console.error(error)
-        });
+        getFetch
+        .then(resp => setProductos(resp))
+        .catch(err => console.log(err))
+        .finally(() => setLoading(false))
     }, []);
         
+    console.log(productos);
 
     return (
         <div>
-            <h2 style={{textAlign: 'center'}}> {saludo}</h2>
-            <ItemList productos={data} />
+            <h2>{greeting}</h2> 
+            { loading ? 
+                    <h2> Cargando ... </h2> 
+                : 
+                    <ItemList productos={productos}/>
+            }
         </div>
-    );
+    )
 }
 
 export default ItemListContainer

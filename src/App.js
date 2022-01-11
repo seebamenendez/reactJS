@@ -1,15 +1,10 @@
 import './App.css';
 import Menu from './components/Navbar/Menu';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import ItemCount from './components/ItemCount/ItemCount';
+//import ItemCount from './components/ItemCount/ItemCount';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 
 function App() {
-
-  /*const item = {
-    nombre: 'Campera Origen',
-    precio: 2500,
-    coleccion: 'Lucida'
-  }*/
 
   //jsx
   return(
@@ -17,11 +12,9 @@ function App() {
       <h1>Arauca</h1>
       <Menu />
       <ItemListContainer greeting='Bienvenidos a Arauca'/>
-      <ItemCount min={1} max={10} />
+      <ItemDetailContainer />
     </div>
   )
 }
-
-
 
 export default App;
