@@ -1,18 +1,22 @@
-import { useEffect, useState } from 'react';
-import { getFetch } from '../../productos';
-import ItemDetail from './ItemDetail/ItemDetail';
+import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+import { getMock } from '../../productos'
+import ItemDetail from './ItemDetail/ItemDetail'
 
 const ItemDetailContainer = () => {
+    const [product, setProduct] = useState({})
 
-    const [producto, setproducto] = useState({})
+    const { detalleId } = useParams()
 
     useEffect(() => {
-        getFetch
-        .then(resp => setproducto(resp.find(prod => prod.id === '2')))
-    }, [])
+        getMock
+            .then(res => setProduct(res.find(prod => prod.id === detalleId)))
+
+    }, [detalleId])
+    console.log(detalleId)
     return (
-        <div>
-            <ItemDetail producto={producto} />
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+           <ItemDetail product={product} />
         </div>
     )
 }
