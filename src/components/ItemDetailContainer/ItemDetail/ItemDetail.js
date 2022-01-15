@@ -14,7 +14,7 @@ const ItemDetail = ({ product }) => {
         setShow(false)
         alert(`${contador}`)
     }
-
+    
     return (
         <div>
             <Card style={{ width: '18rem', margin: '20px' }}>
@@ -41,4 +41,4 @@ const ItemDetail = ({ product }) => {
     )
 }
 
-export default ItemDetail
+export default ItemDetail 
