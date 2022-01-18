@@ -1,38 +1,29 @@
-import React, { useState } from 'react';
-import './counter.css';
+import React,{useState} from 'react'
 
-const ItemCount = ({min, max}) => {
+function ItemCount({ stock, onAdd }) {
 
+    const initial = 0
 
+    const [contador, mueveContador] = useState(initial);
 
-const [counter, setCounter] = useState(min);
+    const sumarCompra = () => {
+        contador < stock
+            ? mueveContador(prev => prev + 1)
+            : alert("Stock máximo disponible.");
+    };
 
-const handleIncrement = () => {
-    counter < max ? setCounter(prev => prev + 1) : alert('Stock máximo del producto.')
-    
-}
-
-const handleDecrement = () => {
-    counter > min ? setCounter(prev => prev - 1) : alert('Minimo de compra.')
-
-    
-}
-
-const reset = () => {
-    setCounter(min);
-}
-
+    const restarCompra = () => {
+        contador > initial &&
+            mueveContador(prev => prev - 1);
+    };
 
     return (
-      <div className='counter'>
-          <h1>{counter}</h1>
-  
-          <button onClick={handleIncrement}>+</button>
-          <button onClick={reset}>Reset</button>
-          <button onClick={handleDecrement}>-</button>
-  
-      </div>
+        <div style={{ textAlign: 'center', alignItems: 'center', justifyContent: 'center' }} >
+            <h1 > {contador}   </h1>
+            <button onClick={restarCompra} > - </button>
+            <button onClick={() => onAdd(contador)} disabled={contador < 1 && 'disabled'}> Agregar al Carrito </button>
+            <button onClick={sumarCompra} > + </button>
+        </div>
     )
-  }
-  
-  export default ItemCount;
+}
+export default ItemCount

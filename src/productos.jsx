@@ -22,7 +22,7 @@ export const productos = [
         id: "2",
         nombre: "Vestido NATIVO",
         foto: vestidoNativo,
-        stock: "9",
+        stock: "3",
         coleccion: "Origen"
     },
     {
@@ -30,7 +30,7 @@ export const productos = [
         id: "3",
         nombre: "Camisa OVER",
         foto: camisaOver,
-        stock: "9",
+        stock: "4",
         coleccion: "Lucida"
     },
     {
@@ -38,7 +38,7 @@ export const productos = [
         id: "4",
         nombre: "Básica Algodón",
         foto: basicaAlgodon,
-        stock: "9",
+        stock: "3",
         coleccion: "Lucida"
     },
     {
@@ -46,7 +46,7 @@ export const productos = [
         id: "5",
         nombre: "Sobrecamisa - PANTS",
         foto: pants,
-        stock: "9",
+        stock: "3",
         coleccion: "Lucida"
     },
     {
@@ -54,7 +54,7 @@ export const productos = [
         id: "6",
         nombre: "Campera ORIGEN",
         foto: camperaOrigen,
-        stock: "9",
+        stock: "2",
         coleccion: "Lucida"
     },
     {
@@ -62,7 +62,7 @@ export const productos = [
         id: "7",
         nombre: "Sobrecamisa - PANTS",
         foto: pants1,
-        stock: "9",
+        stock: "3",
         coleccion: "Origen"
     },
     {
@@ -70,7 +70,7 @@ export const productos = [
         id: "8",
         nombre: "Sobrecamisa GALOPE",
         foto: galope,
-        stock: "9",
+        stock: "4",
         coleccion: "Origen"
     },
     {
@@ -78,7 +78,7 @@ export const productos = [
         id: "9",
         nombre: "Pantalón ORION",
         foto: orion,
-        stock: "9",
+        stock: "5",
         coleccion: "Transitar"
     },
     {
@@ -86,7 +86,7 @@ export const productos = [
         id: "14",
         nombre: "Campera ORIGEN",
         foto: camperaOrigen,
-        stock: "9",
+        stock: "4",
         coleccion: "Origen"
     },
     {
@@ -94,7 +94,7 @@ export const productos = [
         id: "10",
         nombre: "Campera ORIGEN",
         foto: origen,
-        stock: "9",
+        stock: "4",
         coleccion: "Transitar"
     },
     {
@@ -102,7 +102,7 @@ export const productos = [
         id: "12",
         nombre: "Vestido NATIVO",
         foto: vestidoNativo,
-        stock: "9",
+        stock: "5",
         coleccion: "Transitar"
     }
 ]
